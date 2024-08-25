@@ -13,13 +13,15 @@ async function watchExcelFiles() {
     directoriesToWatch,
     (err, events) => {
       if (err) {
-        console.error("Error:", err);
+        console.error("Error sth went wrong:", err);
         return;
       }
 
       events.forEach((event) => {
         const { path, type } = event;
         const ext = path.slice(path.lastIndexOf("."));
+
+        console.log(ext, path);
 
         if (excelExtensions.includes(ext)) {
           console.log(`${type} event detected for Excel file: ${path}`);
@@ -36,4 +38,4 @@ async function watchExcelFiles() {
   // await subscription.unsubscribe();
 }
 
-watchExcelFiles().catch(console.error);
+watchExcelFiles();
