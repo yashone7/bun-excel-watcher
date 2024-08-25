@@ -1,0 +1,5 @@
+[artifacts_directory]
+path = "C:\\Projects\\artifacts"
+
+
+extensions_to_watch = ['.xlsx', '.xls', '.xlsm', '.xlsb']
